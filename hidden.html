@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>hidden html</title>
+</head> 
+<body>
+<h1>Hidden things by Aaron Bopp</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_age">Entre the secrete word </label>
+    <input type ="password" id="form1_age" name="form1_age" min=10 max=50 step=2 value=secret> <br>
+
+    <label for="form1_nick">guess</label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+<p id="result"></p>
+
+<p id="result"></p>
+
+<script> 
+correct = 0
+wrong = 0
+function processGuess(){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    out = document.getElementById("result")
+    if (age === nick) {
+        correct++
+        out.innerHTML = `Congrations ${correct}`
+    } else {
+        wrong++
+        out.innerHTML = `Sorry ${wrong}`
+    }
+}
+</script>
+
+</body>
+</html> 
