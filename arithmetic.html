@@ -17,8 +17,6 @@
 </form>
 
 
-<p id="result">This text will be replaced </p>
-
 <script> 
 
 function resolveForm (){
@@ -33,6 +31,56 @@ function resolveForm (){
     
 }
 </script>
+
+
+<h2>Getting input with radio buttons and checkboxes</h2>
+
+    <form>
+        <input type="radio" id="rg1_red" name="color" value="adds"   
+          checked >
+        <label for="rg1_red">+</label></br>
+      
+        <input type="radio" id="rg1_blue" name="color" 
+           value="subtracts">
+        <label for="rg1_blue">-</label></br>
+      
+        <input type="radio" id="rg1_green" name="color"   
+           value="multiplies">
+        <label for="rg1_green">*</label></br>
+
+        <input type="radio" id="rg1_yellow" name="color"   
+           value="divides">
+        <label for="rg1_yellow">/</label></br>
+        <input type="button" onclick="processRadio()" value="Get values from radio group">
+      </form>
+      
+      <h3>Results</h3>
+<p id="result">This text will be replaced </p>
+
+<script> 
+function processRadio() {
+    base = document.getElementById("form1_age").value
+    exponent = document.getElementById("form1_nick").value
+    adds = document.getElementById("rg1_red").checked
+    subtracts = document.getElementById("rg1_blue").checked
+    multiplies = document.getElementById("rg1_green").checked
+    divides = document.getElementById("rg1_yellow").checked
+    
+    result = 0
+    if (adds) {
+        result = base + exponent
+    } else if (subtracts) {
+        result = base - exponent
+    } else if (multiplies) {
+        result = base * exponent
+    } else if (divides) {
+        result = base / exponent
+    }
+    document.getElementById("result").innerHTML = result
+}
+
+</script>
+
 
 </body>
 </html> 
