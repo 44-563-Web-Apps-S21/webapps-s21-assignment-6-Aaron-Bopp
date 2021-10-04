@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<h1>Aaron Bopp Computes</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_age">Enter a base</label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">Enter an exponent</label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Compute">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function resolveForm (){
+    base = document.getElementById("form1_age").value
+    exponent = document.getElementById("form1_nick").value
+    
+    result = ""
+    for (i = 1; i <= exponent; i++) {
+        result += `${base ** i}, `
+    } 
+    document.getElementById("result").innerHTML = result
+    
+}
+</script>
+
+</body>
+</html> 
